@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 class CartItem {
   final String name;
   final double price;
-  final IconData icon; // Changed from imagePath
+  final dynamic visual; // Can be String (imagePath) or IconData
   final MaterialColor color;
   int quantity;
 
   CartItem({
     required this.name,
     required this.price,
-    required this.icon,
+    required this.visual,
     required this.color,
     this.quantity = 1,
   });
@@ -35,7 +35,7 @@ class CartModel extends ChangeNotifier {
   void addItem({
     required String name,
     required double price,
-    required IconData icon, // Changed from imagePath
+    required dynamic visual, // Can be String (imagePath) or IconData
     required MaterialColor color,
   }) {
     final index = _items.indexWhere((i) => i.name == name);
@@ -45,7 +45,7 @@ class CartModel extends ChangeNotifier {
       _items.add(CartItem(
         name: name,
         price: price,
-        icon: icon,
+        visual: visual,
         color: color,
       ));
     }

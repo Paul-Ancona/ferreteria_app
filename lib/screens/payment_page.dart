@@ -84,6 +84,23 @@ class _PaymentPageState extends State<PaymentPage> {
                       isExpiryDateVisible: true,
                       cardHolderName: cardHolderName,
                       expiryDate: expiryDate,
+                      inputConfiguration: const InputConfiguration(
+                        cardNumberDecoration: InputDecoration(
+                          labelText: 'Número de tarjeta',
+                          hintText: 'XXXX XXXX XXXX XXXX',
+                        ),
+                        expiryDateDecoration: InputDecoration(
+                          labelText: 'Fecha de vencimiento',
+                          hintText: 'XX/XX',
+                        ),
+                        cvvCodeDecoration: InputDecoration(
+                          labelText: 'CVV / Código de seguridad',
+                          hintText: 'XXX',
+                        ),
+                        cardHolderDecoration: InputDecoration(
+                          labelText: 'Titular de la tarjeta',
+                        ),
+                      ),
                       cardNumberValidator: (String? cardNumber) {
                         return (cardNumber == null || cardNumber.length < 16)
                             ? 'Número de tarjeta inválido'

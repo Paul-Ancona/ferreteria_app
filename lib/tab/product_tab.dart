@@ -20,7 +20,7 @@ class ProductTab extends StatelessWidget {
           productName: itemsList[index][0],
           productPrice: itemsList[index][1],
           productColor: itemsList[index][2],
-          productIcon: itemsList[index][3],
+          productVisual: itemsList[index][3],
           productCategory: itemsList[index][4],
         );
       },

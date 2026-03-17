@@ -43,7 +43,9 @@ class CartPage extends StatelessWidget {
                                 color: item.color[100],
                                 borderRadius: BorderRadius.circular(12),
                               ),
-                              child: Icon(item.icon, size: 40, color: item.color[800]),
+                              child: item.visual is String
+                                  ? Image.asset(item.visual, height: 40, fit: BoxFit.contain)
+                                  : Icon(item.visual, size: 40, color: item.color[800]),
                             ),
                             const SizedBox(width: 12),
                             Expanded(
@@ -115,7 +117,7 @@ class CartPage extends StatelessWidget {
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.2),
+                    color: Colors.grey.withValues(alpha: 0.2),
                     blurRadius: 10,
                     offset: const Offset(0, -5),
                   )

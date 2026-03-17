@@ -24,32 +24,32 @@ List<Widget> myTabs = [
 class _HomePageState extends State<HomePage> {
   // Datos de ferretería
   final List manualTools = [
-    ['Martillo', '150.00', Colors.blue, Icons.hardware, 'Manuales'],
-    ['Desarmadores', '250.00', Colors.red, Icons.pan_tool, 'Manuales'],
-    ['Llaves', '300.00', Colors.green, Icons.build, 'Manuales'],
-    ['Pinzas', '180.00', Colors.orange, Icons.construction, 'Manuales'],
-    ['Cinta métrica', '90.00', Colors.purple, Icons.straighten, 'Manuales'],
+    ['Martillo', '150.00', Colors.blue, 'lib/images/hammer.png', 'Manuales'],
+    ['Desarmadores', '250.00', Colors.red, 'lib/images/screwdrivers.png', 'Manuales'],
+    ['Llaves', '300.00', Colors.green, 'lib/images/wrench.png', 'Manuales'],
+    ['Pinzas', '180.00', Colors.orange, 'lib/images/pliers.png', 'Manuales'],
+    ['Cinta métrica', '90.00', Colors.purple, 'lib/images/tape_measure.png', 'Manuales'],
   ];
 
   final List powerTools = [
-    ['Taladro', '1200.00', Colors.red, Icons.handyman, 'Eléctricas'], // Fixed from power_tool
-    ['Sierra circular', '2500.00', Colors.blue, Icons.architecture, 'Eléctricas'],
-    ['Lijadora', '950.00', Colors.green, Icons.square, 'Eléctricas'],
-    ['Rotomartillo', '3200.00', Colors.orange, Icons.electric_bolt, 'Eléctricas'],
-    ['Pulidora', '1100.00', Colors.grey, Icons.radio_button_checked, 'Eléctricas'],
+    ['Taladro', '1200.00', Colors.red, 'lib/images/drill.png', 'Eléctricas'],
+    ['Sierra circular', '2500.00', Colors.blue, 'lib/images/circular_saw.png', 'Eléctricas'],
+    ['Lijadora', '950.00', Colors.green, 'lib/images/orbital_sander.png', 'Eléctricas'],
+    ['Rotomartillo', '3200.00', Colors.orange, 'lib/images/rotary_hammer.png', 'Eléctricas'],
+    ['Pulidora', '1100.00', Colors.grey, 'lib/images/angle_grinder.png', 'Eléctricas'],
   ];
 
   final List plumbing = [
-    ['Tubo PVC', '85.00', Colors.cyan, Icons.waves, 'Plomería'],
-    ['Codos y conectores', '25.00', Colors.teal, Icons.device_hub, 'Plomería'],
-    ['Llave de paso', '150.00', Colors.blue, Icons.water, 'Plomería'],
-    ['Sellador', '65.00', Colors.green, Icons.format_color_fill, 'Plomería'],
-    ['Cinta teflón', '15.00', Colors.purple, Icons.layers, 'Plomería'],
+    ['Tubo PVC', '85.00', Colors.cyan, 'lib/images/pvc_pipe.png', 'Plomería'],
+    ['Codos y conectores', '25.00', Colors.teal, 'lib/images/pvc_elbow.png', 'Plomería'],
+    ['Llave de paso', '150.00', Colors.blue, 'lib/images/water_valve.png', 'Plomería'],
+    ['Sellador', '65.00', Colors.green, 'lib/images/pipe_sealant.png', 'Plomería'],
+    ['Cinta teflón', '15.00', Colors.purple, 'lib/images/teflon_tape.png', 'Plomería'],
   ];
 
   final List painting = [
-    ['Pintura vinílica', '850.00', Colors.red, Icons.format_paint, 'Pintura'],
-    ['Brochas', '45.00', Colors.orange, Icons.brush, 'Pintura'],
+    ['Pintura vinílica', '850.00', Colors.red, 'lib/images/paint_bucket.png', 'Pintura'],
+    ['Brochas', '45.00', Colors.orange, 'lib/images/paint_brush.png', 'Pintura'],
     ['Rodillos', '120.00', Colors.blue, Icons.roller_shades, 'Pintura'],
     ['Charola', '55.00', Colors.green, Icons.kitchen, 'Pintura'],
     ['Espátulas', '35.00', Colors.brown, Icons.rectangle, 'Pintura'],

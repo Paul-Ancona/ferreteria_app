@@ -6,7 +6,7 @@ class ProductTile extends StatelessWidget {
   final String productName;
   final String productPrice;
   final dynamic productColor;
-  final IconData productIcon;
+  final dynamic productVisual; // String or IconData
   final String productCategory;
 
   const ProductTile({
@@ -14,7 +14,7 @@ class ProductTile extends StatelessWidget {
     required this.productName,
     required this.productPrice,
     required this.productColor,
-    required this.productIcon,
+    required this.productVisual,
     required this.productCategory,
   });
 
@@ -57,26 +57,38 @@ class ProductTile extends StatelessWidget {
               ],
             ),
 
-            // icono del producto
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 24),
-              child: Icon(
-                productIcon,
-                size: 64,
-                color: productColor[800],
+            // icono o imagen del producto
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                child: Center(
+                  child: productVisual is String
+                      ? Image.asset(
+                          productVisual,
+                          fit: BoxFit.contain,
+                        )
+                      : Icon(
+                          productVisual,
+                          size: 110,
+                          color: productColor[800],
+                        ),
+                ),
               ),
             ),
 
             // nombre del producto
-            Text(
-              productName,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Text(
+                productName,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                ),
+                textAlign: TextAlign.center,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
-              textAlign: TextAlign.center,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
             ),
 
             const SizedBox(height: 4),
@@ -87,8 +99,7 @@ class ProductTile extends StatelessWidget {
               style: TextStyle(color: Colors.grey[600], fontSize: 12),
             ),
 
-            const Spacer(),
-
+            // controles inferiores
             Padding(
               padding: const EdgeInsets.all(12.0),
               child: Row(
@@ -104,7 +115,7 @@ class ProductTile extends StatelessWidget {
                       context.read<CartModel>().addItem(
                             name: productName,
                             price: price,
-                            icon: productIcon,
+                            visual: productVisual,
                             color: productColor,
                           );
                       
